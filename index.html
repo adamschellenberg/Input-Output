@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Who Are You?</title>
+</head>
+
+<body>
+
+	<!-- r/dailyprogrammer challenge #1: Create a program that will ask the users name, age, and reddit username.
+		Have it tell them the information back in the following format:
+			Your name is <name>, you are <blank> years old, and your username is <blank> -->
+
+	<h2 class="display-4">Challenge #1: Input-Output</h2>
+
+    <!-- Ask user for name, age, and reddit name -->
+	<form>
+		What's your name?<input class="challenge1-input" id="nameInput" type="text" name="userName"> </br>
+		How old are you?<input class="challenge1-input" id="ageInput" type="text" name="userAge"> </br>
+		What's your Reddit username?<input class="challenge1-input" id="usernameInput" type="text" name="redditUsername"> </br>
+		<button id="challenge1-submitButton" type="button" onclick="outputInfo()">Submit</button>
+	</form>
+		
+	<div id="challenge1-output"></div>
+		
+	<script>
+		// get user input and output them back
+		function outputInfo() {
+
+			var outputDiv = document.getElementById("challenge1-output");
+			
+			if (document.getElementById("nameInput").value != "" && document.getElementById("ageInput").value != "" && document.getElementById("usernameInput").value != "") {
+				var userName = document.getElementById("nameInput").value;
+				var userAge = document.getElementById("ageInput").value;
+				var userRedditName = document.getElementById("usernameInput").value;
+					
+				var outputString = "Ahh, so your name is " + userName + ", you are " + userAge + " years old, and your Reddit username is... " + userRedditName + "? Really? Well, okay... <br> Anyways, nice to meet you!"; 
+					
+				outputDiv.innerHTML = outputString;
+					
+			} else {
+				var outputString = "Nah, man, you're supposed to fill out the boxes before hitting 'Submit'";
+					
+				outputDiv.innerHTML = outputString;
+			}
+		}
+	</script>
+
+</body>
+</html>
